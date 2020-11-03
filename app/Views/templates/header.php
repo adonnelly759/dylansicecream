@@ -6,6 +6,7 @@
     <title>Dylan's Ice Cream</title>
     <link rel="shortcut icon" href="assets/images/favicon.png">
     <link rel="stylesheet" href="assets/css/pulse.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -25,3 +26,6 @@
     </ul>
   </div>
 </nav>
+
+<div class="container pt-4">
+<div class="row pt-2">

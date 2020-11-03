@@ -30,8 +30,10 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
 // Frontend Routes
-$routes->get('/', 'Frontend::index');
+$routes->get("/", "Frontend::index");
+$routes->get("/login", "Frontend::login");
 
 
 

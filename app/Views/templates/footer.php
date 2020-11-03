@@ -1,4 +1,6 @@
-<footer class="p-3 bg-primary">
+</div>
+</div>
+<footer class="footer p-3 bg-primary">
     <div class="row text-center">
         <div class="col-sm-12">
             <a class="" href="#"><img src="assets/images/dylans_ice_cream_logo_x1.png" alt="Dylan's Ice Cream Logo"></a>
