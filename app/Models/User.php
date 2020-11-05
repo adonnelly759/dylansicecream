@@ -5,13 +5,13 @@ use \DateTime;
 
 class User extends Model
 {
-	protected $DBGroup ='user';
+	protected $DBGroup ='default';
 	protected $table = 'user';
 	protected $primarykey = 'id';
 	protected $returnType = 'array';
     protected $allowedFields = ['email', 'password', 'first_name', 'last_name', 'session'];
     protected $validationRules    = [
-		'email' => 'required|valid_email|is_unique(user.email)',
+		'email' => 'required|valid_email',
 		'password' => 'required',
 		'first_name' => 'required',
 		'last_name' => 'required'
@@ -42,7 +42,7 @@ class User extends Model
 			"first_name"=>$first_name,
 			"last_name"=>$last_name
 		];
-		return (!$this->user_exists && $this->insert($data)) ? true : false;
+		return (!$this->user_exists($email) && $this->insert($data)) ? true : false;
 	}
 
 	public function check_credentials($email, $password){
