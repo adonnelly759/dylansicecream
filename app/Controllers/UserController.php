@@ -11,7 +11,7 @@ class UserController extends BaseController {
         if($user->check_credentials($this->request->getPost("email"), $this->request->getPost("password"))){
             echo "Correct"; 
         } else {
-            echo "Incorrect";
+            return redirect()->to('/login?error=1');
         }
     }
 }

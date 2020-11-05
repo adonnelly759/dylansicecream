@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\User;
+use CodeIgniter\Controller;
 
 class Frontend extends BaseController {
     public function index(){
@@ -11,8 +12,12 @@ class Frontend extends BaseController {
     }
 
     public function login(){
+        $error = $this->request->getGet("error");
+
+        $data['error'] = $error;
+
         echo view("templates/header");
-        echo view("pages/frontend/login");
+        echo view("pages/frontend/login", $data);
         echo view("templates/footer");        
     }
 }
