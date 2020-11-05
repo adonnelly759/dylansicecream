@@ -35,6 +35,9 @@ $routes->setAutoRoute(true);
 $routes->get("/", "Frontend::index");
 $routes->get("/login", "Frontend::login");
 
+// User Authentication
+$routes->post("/login", "UserController::check");
+
 
 
 /**
