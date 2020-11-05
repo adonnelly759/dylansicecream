@@ -60,7 +60,7 @@ class User extends Model
 	}
 
 	public function user_exists($email){
-		return (count($user->where("email", $email)->findAll()) > 0) ? true : false;
+		return (count($this->where("email", $email)->findAll()) > 0) ? true : false;
 	}
 
 	public function salt_password($password){
