@@ -5,8 +5,6 @@ use App\Models\User;
 
 class Frontend extends BaseController {
     public function index(){
-        $creation = new Creation();
-        var_dump($creation->findAll());
         echo view("templates/header");
         echo view("pages/frontend/index");
         echo view("templates/footer");
@@ -15,7 +13,7 @@ class Frontend extends BaseController {
     public function login(){
         echo view("templates/header");
         echo view("pages/frontend/login");
-        echo view("templates/footer");
+        echo view("templates/footer");        
     }
 }
 
