@@ -3,10 +3,12 @@
 	"type": "project",
 	"description": "CodeIgniter4 starter app",
 	"homepage": "https://codeigniter.com",
+	"minimum-stability": "dev",
 	"license": "MIT",
 	"require": {
 		"php": ">=7.2",
-		"codeigniter4/framework": "^4"
+		"codeigniter4/framework": "^4",
+		"myth/auth": "9999999-dev"
 	},
 	"require-dev": {
 		"fzaninotto/faker": "^1.9@dev",
