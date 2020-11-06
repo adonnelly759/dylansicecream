@@ -2,7 +2,6 @@
 
 namespace App\Controllers;
 use App\Models\User;
-use App\Controllers\UserController;
 use CodeIgniter\Controller;
 
 class Frontend extends BaseController {
