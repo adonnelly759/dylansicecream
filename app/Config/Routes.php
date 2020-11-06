@@ -40,7 +40,7 @@ $routes->get("/admin", "Frontend::admin", ['filter' => 'checkSession']);
 $routes->post("/login", "UserController::check");
 
 // Admin routes
-
+$routes->get("/admin/user/", "AdminUser::manage", ['filter' => 'checkSession']);
 
 
 /**

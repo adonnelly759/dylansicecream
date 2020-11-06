@@ -3,7 +3,7 @@
 <footer class="footer p-3 bg-primary">
     <div class="row text-center">
         <div class="col-sm-12">
-            <a class="" href="#"><img src="assets/images/dylans_ice_cream_logo_x1.png" alt="Dylan's Ice Cream Logo"></a>
+            <a class="" href="#"><img src="<?php echo base_url();?>/assets/images/dylans_ice_cream_logo_x1.png" alt="Dylan's Ice Cream Logo"></a>
         </div>
         <div class="col-sm-12">
             <p class="text-white">© 2020 Dylan's Ice Cream. Website by <a class="text-white" href="https://www.fiverr.com/aidandon" target="_blank">Aidan Donnelly</a></p>
