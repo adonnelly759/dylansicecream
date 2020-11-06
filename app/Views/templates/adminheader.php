@@ -23,8 +23,17 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Retrieve a Sundae</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/admin">Admin Section</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Admin Section
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="/admin">Admin Home</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Create a user</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Flavours</a>
+        </div>
       </li>
     </ul>
   </div>

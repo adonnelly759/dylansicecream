@@ -3,3 +3,14 @@
     bottom: 0;
     width: 100%;
 }
+
+.admin-home-card {
+    text-align: center;
+    border-radius: 30px;
+    width:100%;
+    margin-bottom:10px;
+}
+
+.admin-home-card-btn {
+    width:50%;
+}
