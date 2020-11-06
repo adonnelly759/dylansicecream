@@ -9,7 +9,9 @@ class UserController extends BaseController {
     public function check(){
         $user = new User();
         if($user->check_credentials($this->request->getPost("email"), $this->request->getPost("password"))){
-            echo "Correct"; 
+            $session = session();
+            $session->set('email', $this->request->getPost("email"));
+            return redirect()->to('/admin');
         } else {
             return redirect()->to('/login?error=1');
         }

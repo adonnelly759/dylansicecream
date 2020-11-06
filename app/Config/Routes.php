@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 // Frontend Routes
 $routes->get("/", "Frontend::index");
 $routes->get("/login", "Frontend::login");
+$routes->get("/admin", "Frontend::admin", ['filter' => 'checkSession']);
 
 // User Authentication
 $routes->post("/login", "UserController::check");

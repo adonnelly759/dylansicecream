@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\User;
+use App\Controllers\UserController;
 use CodeIgniter\Controller;
 
 class Frontend extends BaseController {
@@ -19,6 +20,13 @@ class Frontend extends BaseController {
         echo view("templates/header");
         echo view("pages/frontend/login", $data);
         echo view("templates/footer");        
+    }
+
+    public function admin(){
+    
+        echo view("templates/adminheader");
+        echo view("pages/frontend/admin");
+        echo view("templates/footer");
     }
 }
 
