@@ -35,7 +35,7 @@ class Frontend extends BaseController {
         $user = new User();
         $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;    
         echo view("templates/header", $data);
-        echo view("pages/frontend/admin");
+        echo view("pages/admin/admin");
         echo view("templates/footer");
     }
 }
