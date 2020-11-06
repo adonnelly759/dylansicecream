@@ -7,13 +7,21 @@ use CodeIgniter\Controller;
 
 class Frontend extends BaseController {
     public function index(){
-        echo view("templates/header");
+        $user = new User();
+        $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;
+        
+        echo view("templates/header", $data);
         echo view("pages/frontend/index");
         echo view("templates/footer");
     }
 
     public function login(){
         $error = $this->request->getGet("error");
+        $user = new User();
+
+        if($user->user_exists($this->session->email) && !empty($this->session->email)){
+            return redirect()->to("/admin");
+        }
 
         $data['error'] = $error;
 
@@ -23,8 +31,9 @@ class Frontend extends BaseController {
     }
 
     public function admin(){
-    
-        echo view("templates/adminheader");
+        $user = new User();
+        $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;    
+        echo view("templates/header", $data);
         echo view("pages/frontend/admin");
         echo view("templates/footer");
     }
