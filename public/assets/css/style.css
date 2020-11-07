@@ -1,8 +1,10 @@
 .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-}
+    position: relative;
+    margin-top: -127px; /* negative value of footer height */
+    height: 127px;
+    clear:both;
+    padding-top:20px;
+  } 
 
 .admin-home-card {
     text-align: center;
