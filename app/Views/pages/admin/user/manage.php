@@ -3,7 +3,7 @@
         <h2>Manage Users <a href="<?php echo base_url(); ?>/admin" class="btn btn-primary float-right ml-2">Admin Area</a> <a href="<?php echo base_url(); ?>/admin" class="btn btn-info float-right">Add User</a></h2>
     </div>
     <div class="col-sm-12 pt-4">
-        <table class="table-responsive table-hover">
+        <table class="table table-responsive table-hover w-100 d-block d-md-table">
             <thead>
                 <tr>
                 <th scope="col">ID</th>
