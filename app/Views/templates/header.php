@@ -41,6 +41,4 @@
   </div>
 </nav>
 
-<div class="d-flex flex-column min-vh-100">
-<div class="container pt-4 flex-grow-1">
-<div class="row pt-2">
+<div class="container">
