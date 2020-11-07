@@ -41,6 +41,7 @@ $routes->post("/login", "UserController::check");
 
 // Admin routes
 $routes->get("/admin/user/", "AdminUser::manage", ['filter' => 'checkSession']);
+$routes->get("admin/inclusion/", "AdminInclusion::manage", ['filter' => 'checkSession']);
 
 
 /**

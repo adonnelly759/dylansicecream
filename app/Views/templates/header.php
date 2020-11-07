@@ -29,11 +29,19 @@
           Admin Section
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/admin">Admin Home</a>
+          <a class="dropdown-item" href="/admin">Admin Section</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Create a user</a>
+          <a class="dropdown-item" href="/admin/user">Users</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Flavours</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Wafers</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="/admin/inclusion">Inclusions</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Sauces</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Sprinkles</a>
         </div>
       </li>
       <?php endif; ?>

@@ -1,5 +1,4 @@
-<div class="container">
-  <div class="row">
+  <div class="row pt-4 pb-4">
     <div class="col-sm-12 col-md-4">
       <div class="card admin-home-card">
         <div class="card-body">
@@ -32,7 +31,7 @@
         <div class="card-body">
            <h5 class="card-title">Inclusions</h5>
            <p class="card-text">Create a new admin user for the site.</p>
-           <a href="#" class="btn btn-primary admin-home-card-btn">Manage</a>
+           <a href="/admin/inclusion" class="btn btn-primary admin-home-card-btn">Manage</a>
         </div>
        </div>
     </div>
@@ -55,5 +54,4 @@
        </div>
     </div>
   </div>
-</div>
   
