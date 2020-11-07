@@ -58,7 +58,11 @@ $routes->add("/admin/wafer/add", "AdminWafer::add", ['filter' => 'checkSession']
 $routes->add("/admin/wafer/edit/(:any)", "AdminWafer::edit/$1", ['filter' => 'checkSession']);
 $routes->add("/admin/wafer/delete/(:any)", "AdminWafer::delete/$1", ['filter' => 'checkSession']);
 
-$routes->get("admin/inclusion/", "AdminInclusion::manage", ['filter' => 'checkSession']);
+//Inclusion
+$routes->get("admin/inclusion", "AdminInclusion::manage", ['filter' => 'checkSession']);
+$routes->get("admin/inclusion/add", "AdminInclusion::add", ['filter' => 'checkSession']);
+$routes->get("admin/inclusion/edit/(:any)", "AdminInclusion::edit/$1", ['filter' => 'checkSession']);
+$routes->get("admin/inclusion/delete/(:any)", "AdminInclusion::delete/$1", ['filter' => 'checkSession']);
 
 
 /**
