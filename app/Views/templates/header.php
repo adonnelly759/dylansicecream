@@ -42,6 +42,8 @@
           <a class="dropdown-item" href="#">Sauces</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Sprinkles</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item text-white bg-danger" href="/logout">Logout</a>
         </div>
       </li>
       <?php endif; ?>

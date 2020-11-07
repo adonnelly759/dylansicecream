@@ -37,6 +37,15 @@ class Frontend extends BaseController {
         echo view("pages/admin/admin");
         echo view("templates/footer");
     }
+
+    public function logout(){
+        if(!empty($this->session->email)){
+            $this->session->destroy();
+            return redirect()->to("/");
+        } else {
+            return redirect()->to("/login");
+        }
+    }
 }
 
 ?>
