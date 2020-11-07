@@ -30,7 +30,7 @@
       <div class="card admin-home-card">
         <div class="card-body">
            <h5 class="card-title">Inclusions</h5>
-           <p class="card-text">Create a new admin user for the site.</p>
+           <p class="card-text">Add, edit and delete available inclusions.</p>
            <a href="/admin/inclusion" class="btn btn-primary admin-home-card-btn">Manage</a>
         </div>
        </div>
@@ -39,8 +39,8 @@
       <div class="card admin-home-card">
         <div class="card-body">
            <h5 class="card-title">Sauces</h5>
-           <p class="card-text">Add, edit and delete available flavours.</p>
-           <a href="#" class="btn btn-primary admin-home-card-btn">Manage</a>
+           <p class="card-text">Add, edit and delete available sauces.</p>
+           <a href="/admin/sauce" class="btn btn-primary admin-home-card-btn">Manage</a>
         </div>
        </div>
     </div>
@@ -48,8 +48,8 @@
       <div class="card admin-home-card">
         <div class="card-body">
            <h5 class="card-title">Sprinkles</h5>
-           <p class="card-text">Add, edit and delete available wafers.</p>
-           <a href="#" class="btn btn-primary admin-home-card-btn">Manage</a>
+           <p class="card-text">Add, edit and delete available sprinkles.</p>
+           <a href="admin/sprinkles" class="btn btn-primary admin-home-card-btn">Manage</a>
         </div>
        </div>
     </div>

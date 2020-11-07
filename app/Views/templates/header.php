@@ -33,15 +33,15 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/admin/user">Users</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Flavours</a>
+          <a class="dropdown-item" href="/admin/flavour">Flavours</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Wafers</a>
+          <a class="dropdown-item" href="/admin/wafer">Wafers</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/admin/inclusion">Inclusions</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sauces</a>
+          <a class="dropdown-item" href="/admin/sauce">Sauces</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Sprinkles</a>
+          <a class="dropdown-item" href="/admin/sprinkles">Sprinkles</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item text-white bg-danger" href="/logout">Logout</a>
         </div>

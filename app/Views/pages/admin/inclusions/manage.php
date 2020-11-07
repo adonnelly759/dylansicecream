@@ -8,9 +8,7 @@
                 <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Name</th>
-                <th scope="col">Price (&#163;)</th>
-                <th scope="col">Type</th>
-                <th scope="col"></th>
+                <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,8 +17,6 @@
                         <tr>
                             <th scope="row"><?php echo $inclusion['ItemID']; ?></th>
                             <td><?php echo $inclusion['ItemName']; ?></td>
-                            <td><?php echo $inclusion['ItemPrice']; ?></td>
-                            <td><?php echo $inclusion['GroupName']; ?></td>
                             <td>
                                 <a href="<?php echo base_url(); ?>/admin/inclusion/edit/<?php echo $inclusion['ItemID']; ?>" class="btn btn-primary">Edit</a>
                                 <a href="<?php echo base_url(); ?>/admin/inclusion/delete/<?php echo $inclusion['ItemID']; ?>" class="btn btn-danger">Delete</a>
