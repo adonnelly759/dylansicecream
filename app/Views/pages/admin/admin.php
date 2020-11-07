@@ -13,7 +13,7 @@
         <div class="card-body">
            <h5 class="card-title">Flavours</h5>
            <p class="card-text">Add, edit and delete available flavours.</p>
-           <a href="#" class="btn btn-primary admin-home-card-btn">Manage</a>
+           <a href="/admin/flavour" class="btn btn-primary admin-home-card-btn">Manage</a>
         </div>
        </div>
     </div>
@@ -22,7 +22,7 @@
         <div class="card-body">
            <h5 class="card-title">Wafers</h5>
            <p class="card-text">Add, edit and delete available wafers.</p>
-           <a href="#" class="btn btn-primary admin-home-card-btn">Manage</a>
+           <a href="/admin/wafer" class="btn btn-primary admin-home-card-btn">Manage</a>
         </div>
        </div>
     </div>
