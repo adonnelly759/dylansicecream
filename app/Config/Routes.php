@@ -40,10 +40,24 @@ $routes->get("/admin", "Frontend::admin", ['filter' => 'checkSession']);
 $routes->post("/login", "UserController::check");
 
 // Admin routes
+// User
 $routes->get("/admin/user", "AdminUser::manage", ['filter' => 'checkSession']);
 $routes->add("/admin/user/add", "AdminUser::add", ['filter' => 'checkSession']);
 $routes->add("/admin/user/edit/(:any)", "AdminUser::edit/$1", ['filter' => 'checkSession']);
 $routes->add("/admin/user/delete/(:any)", "AdminUser::delete/$1", ['filter' => 'checkSession']);
+
+// Flavour
+$routes->get("/admin/flavour", "AdminFlavour::manage", ['filter' => 'checkSession']);
+$routes->add("/admin/flavour/add", "AdminFlavour::add", ['filter' => 'checkSession']);
+$routes->add("/admin/flavour/edit/(:any)", "AdminFlavour::edit/$1", ['filter' => 'checkSession']);
+$routes->add("/admin/flavour/delete/(:any)", "AdminFlavour::delete/$1", ['filter' => 'checkSession']);
+
+// Wafer
+$routes->get("/admin/wafer", "AdminWafer::manage", ['filter' => 'checkSession']);
+$routes->add("/admin/wafer/add", "AdminWafer::add", ['filter' => 'checkSession']);
+$routes->add("/admin/wafer/edit/(:any)", "AdminWafer::edit/$1", ['filter' => 'checkSession']);
+$routes->add("/admin/wafer/delete/(:any)", "AdminWafer::delete/$1", ['filter' => 'checkSession']);
+
 $routes->get("admin/inclusion/", "AdminInclusion::manage", ['filter' => 'checkSession']);
 
 
