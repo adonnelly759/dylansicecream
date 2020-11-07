@@ -1,6 +1,6 @@
 <div class="row pt-4 pb-4">
     <div class="col-sm-12 pb-4">
-        <h2>Add User <a href="<?php echo base_url(); ?>/admin" class="btn btn-primary float-right ml-2">Admin Area</a> <a href="<?php echo base_url(); ?>/admin/user" class="btn btn-info float-right">Manage User</a></h2>
+        <h2>Edit User <a href="<?php echo base_url(); ?>/admin" class="btn btn-primary float-right ml-2">Admin Area</a> <a href="<?php echo base_url(); ?>/admin/user" class="btn btn-info float-right">Manage User</a></h2>
     </div>
     <!-- Errors -->
     <?php if(isset($error)): ?>
@@ -19,30 +19,31 @@
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="first_name">First Name</label>
-                        <input type="text" class="form-control" id="first_name" name="first_name" required placeholder="First Name">
+                        <input type="text" class="form-control" id="first_name" name="first_name" required placeholder="First Name" value="<?php echo $user['first_name']; ?>">
                     </div>
                 </div>
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="last_name">Last Name</label>
-                        <input type="text" class="form-control" id="last_name" name="last_name" required placeholder="Last Name">
+                        <input type="text" class="form-control" id="last_name" name="last_name" required placeholder="Last Name" value="<?php echo $user['last_name']; ?>">
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email">
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" placeholder="Enter email" value="<?php echo $user['email']; ?>">
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
+                        <small id="emailHelp" class="form-text text-muted">You may leave the password field empty to keep same password.</small>
+                        <input type="password" class="form-control" id="password" name="blank_password" autocomplete="new-password" placeholder="Password">
                     </div>
                 </div>
             </div>
             <div class="col-sm-12">
-                <button type="submit" class="btn btn-primary float-right">Add User</button>
+                <button type="submit" class="btn btn-primary float-right">Edit User</button>
             </div>
         </form>
     </div>

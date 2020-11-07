@@ -11,14 +11,14 @@ class User extends Model
 	protected $returnType = 'array';
     protected $allowedFields = ['email', 'password', 'first_name', 'last_name', 'session'];
 
-	public function create_user($email, $password, $first_name, $last_name){
+	public function create_user(){
 		$data = [
-			"email"=>$email,
-			"password"=>$this->salt_password($password),
-			"first_name"=>$first_name,
-			"last_name"=>$last_name
+			"email"=>$_POST['email'],
+			"password"=>$this->salt_password($_POST['password']),
+			"first_name"=>$_POST['first_name'],
+			"last_name"=>$_POST['last_name']
 		];
-		return (!$this->user_exists($email) && $this->insert($data)) ? true : false;
+		return (!$this->user_exists($_POST['email']) && $this->insert($data)) ? true : false;
 	}
 
 	public function check_credentials($email, $password){

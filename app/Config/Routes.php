@@ -40,7 +40,10 @@ $routes->get("/admin", "Frontend::admin", ['filter' => 'checkSession']);
 $routes->post("/login", "UserController::check");
 
 // Admin routes
-$routes->get("/admin/user/", "AdminUser::manage", ['filter' => 'checkSession']);
+$routes->get("/admin/user", "AdminUser::manage", ['filter' => 'checkSession']);
+$routes->add("/admin/user/add", "AdminUser::add", ['filter' => 'checkSession']);
+$routes->add("/admin/user/edit/(:any)", "AdminUser::edit/$1", ['filter' => 'checkSession']);
+$routes->add("/admin/user/delete/(:any)", "AdminUser::delete/$1", ['filter' => 'checkSession']);
 $routes->get("admin/inclusion/", "AdminInclusion::manage", ['filter' => 'checkSession']);
 
 
