@@ -10,7 +10,7 @@
         </div>
     </div>
     <?php endif; ?>
-    <div class="row h-100 justify-content-center align-items-center">
+    <div class="row h-100 justify-content-center align-items-center pt-4 pb-4">
         <form class="col-sm-12" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Email address</label>

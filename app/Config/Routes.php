@@ -32,7 +32,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 
 // Frontend Routes
-$routes->get("/", "Frontend::index");
+$routes->add("/", "Frontend::index");
 $routes->get("/login", "Frontend::login");
 $routes->get("/admin", "Frontend::admin", ['filter' => 'checkSession']);
 $routes->get("/logout", "Frontend::logout");
