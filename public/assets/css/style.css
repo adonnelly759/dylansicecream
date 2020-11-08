@@ -16,3 +16,17 @@
 .make_ice_cream_btn{
     width:100%;
 }
+
+@font-face {
+    font-family: 'trend_sansone';
+    src: url('http://localhost:8080/assets/css/latinotype_-_trendsansone-webfont.woff2') format('woff2'),
+         url('http://localhost:8080/assets/css/latinotype_-_trendsansone-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.trend_sansone{
+    font-family: 'trend_sansone', Arial, sans-serif!important;
+    font-weight: normal;
+    font-style: normal;
+}
