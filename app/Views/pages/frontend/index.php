@@ -76,7 +76,7 @@
             </div>
         </form>
     </div>
-    <div class = "col-sm-6 pb-4">
+    <div class="col-sm-6 pb-4 bg-light">
     </div>
     <button type="submit" class="btn btn-primary make_ice_cream_btn trend_sansone">GENERATE SUNDAE CODE</button>
 </div>
