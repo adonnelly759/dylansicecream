@@ -14,11 +14,11 @@
         <form class="col-sm-12" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1" class="trend_sansone">Email address</label>
-                <input type="email" name="email" class="form-control trend_sansone" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
-            <div class="form-group trend_sansone">
-                <label for="password1">Password</label>
+            <div class="form-group">
+                <label for="password1" class="trend_sansone">Password</label>
                 <input type="password" class="form-control" id="password1" name="password" aria-describedby="emailHelp" placeholder="Enter password">
             </div>
             <button type="submit" class="btn btn-primary float-right">Login</button>
