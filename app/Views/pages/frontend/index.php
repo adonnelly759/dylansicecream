@@ -3,7 +3,7 @@
         <h2 class="make_ice_cream_h2 pb-2 trend_sansone">Dylan's Sundae Maker</h2>
     </div>
     <div class = "col-sm-6 pb-4">
-        <form>
+        <form class="trend_sansone">
             <div class="form-group">
             <select class="form-control" id="first_scoop">
                 <option value="" selected disabled>First Scoop</option>
