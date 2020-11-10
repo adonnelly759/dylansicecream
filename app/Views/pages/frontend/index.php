@@ -5,8 +5,8 @@
     <div class = "col-sm-6 pb-4">
         <form class="trend_sansone">
             <div class="form-group">
-            <select class="form-control" id="first_scoop">
-                <option value="" selected disabled>First Scoop</option>
+            <label class="mb-3 text-primary">Select your Flavour</label>
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100 form-control" id="first_scoop">
                 <?php if(!empty($flavours)): ?>
                     <?php foreach($flavours as $flavour): ?>
                     <option value="<?php echo $flavour['ItemID']; ?>"><?php echo $flavour['ItemName']; ?></option>
@@ -15,18 +15,8 @@
             </select>
             </div>
             <div class="form-group">
-            <select class="form-control" id="second_scoop">
-                <option value="" selected disabled>Second Scoop</option>
-                <?php if(!empty($flavours)): ?>
-                    <?php foreach($flavours as $flavour): ?>
-                    <option value="<?php echo $flavour['ItemID']; ?>"><?php echo $flavour['ItemName']; ?></option>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </select>
-            </div>
-            <div class="form-group">
-            <select class="form-control" id="inclusion">
-                <option value="" selected disabled>Inclusion</option>
+            <label class="mb-3 text-primary">Select your Inclusion</label>
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100 form-control" id="inclusion">
                 <option value="">No Inclusion</option>
                 <?php if(!empty($inclusions)): ?>
                     <?php foreach($inclusions as $inclusion): ?>
@@ -36,8 +26,8 @@
             </select>
             </div>
             <div class="form-group">
-            <select class="form-control" id="wafer">
-                <option value="" selected disabled>Wafer</option>
+            <label class="mb-3 text-primary">Select your Wafer</label>
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100 form-control" id="wafer">
                 <option value="">No Wafer</option>
                 <?php if(!empty($wafers)): ?>
                     <?php foreach($wafers as $wafer): ?>
@@ -47,8 +37,8 @@
             </select>
             </div>
             <div class="form-group">
-            <select class="form-control" id="sprinkles">
-                <option value="" selected disabled>Sprinkles</option>
+            <label class="mb-3 text-primary">Select your Sprinkles</label>
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100 form-control" id="sprinkles">
                 <option value="">No Sprinkles</option>
                 <?php if(!empty($sprinkles)): ?>
                     <?php foreach($sprinkles as $sprinkle): ?>
@@ -58,8 +48,8 @@
             </select>
             </div>
             <div class="form-group">
-            <select class="form-control" id="sauce">
-            <option value="" selected disabled>Sauce</option>
+            <label class="mb-3 text-primary">Select your Sauce</label>
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm " class="selectpicker w-100 form-control" id="sauce">
             <option value="">No Sauce</option>
             <?php if(!empty($sauces)): ?>
                 <?php foreach($sauces as $sauce): ?>
@@ -70,13 +60,15 @@
             </div>
             <div class="form-group">
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1" checked="">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
                     <label class="custom-control-label" for="customSwitch1">Do you want Cream?</label>
                 </div>
             </div>
         </form>
     </div>
     <div class="col-sm-6 pb-4 bg-light">
+    <label class="text-white mb-3 lead">Where do you live?</label>
+
     </div>
     <button type="submit" class="btn btn-primary make_ice_cream_btn trend_sansone">GENERATE SUNDAE CODE</button>
 </div>

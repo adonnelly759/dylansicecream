@@ -7,6 +7,7 @@
     <link rel="shortcut icon" href="<?php echo base_url();?>/assets/images/favicon.png">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/pulse.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-select.min.css">
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
