@@ -2,11 +2,13 @@
 
 namespace App\Controllers;
 use App\Models\User;
-Use App\Models\Item;
+use App\Models\Item;
+use App\Models\Creation;
 use CodeIgniter\Controller;
 
 class Frontend extends BaseController {
     public function index(){
+        $code = new Creation();
         $user = new User();
         $item = new Item();
         $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;

@@ -10,6 +10,14 @@ class Creation extends Model{
     protected $primaryKey = "id";
     protected $allowedFields = ["code", "created", "used"];
     protected $createdField = ["created"];
+
+    public function random_code(){
+        return \strtoupper(\substr(md5(\str_shuffle("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")), 0, 6));
+    }
+
+    // public function is_unique($code){
+    //     return (count($this->where("code", $code)));
+    // }
 }
 
 ?>
