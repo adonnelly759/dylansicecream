@@ -22,6 +22,30 @@ class Frontend extends BaseController {
         echo view("templates/footer");   
     }
 
+    public function retrieve() {
+        $codeFound = $this->request->getGet("codeFound");
+        $error = $this->request->getGet("error");
+        $user = new User();
+        $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;
+        $data['codeFound'] = $codeFound;
+        $data['error'] = $error;
+        echo view("templates/header", $data);
+        echo view("pages/frontend/retrieve");
+        echo view("templates/footer");
+    }
+
+    public function findCode(){
+        $code = new Creation();
+        $codeInput = $this->request->getPost("codeInput");
+        $query = $code->where("code", $codeInput)->find();
+        if(count($query) != 0 ){
+             //$data['creations'] = $code->filter_creation($codeInput); currently doesnt pass data back to retrieve.php (May be able to use session flashdata to do this)
+            return redirect()->to('/retrieve?codeFound=1');
+        } else {
+            return redirect()->to('/retrieve?error=1');
+        }
+    }
+
     public function login(){
         $error = $this->request->getGet("error");
         $user = new User();

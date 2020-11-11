@@ -22,7 +22,7 @@
         <a class="nav-link" href="/">Make Your Sundae</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Retrieve a Sundae</a>
+        <a class="nav-link" href="/retrieve">Retrieve a Sundae</a>
       </li>
       <?php if($isLogged): ?>
         <li class="nav-item dropdown">

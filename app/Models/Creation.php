@@ -18,6 +18,11 @@ class Creation extends Model{
     // public function is_unique($code){
     //     return (count($this->where("code", $code)));
     // }
+
+    public function filter_creation($code){
+		$query = $this->query("SELECT `creation`.`id` as 'CreationID', `creation`.`code` AS 'CreationCode', `creation`.`Created` AS 'Created' FROM `creation` WHERE `creation`.`code` = ?", $code);
+		return $query->getResultArray();
+	}
 }
 
 ?>

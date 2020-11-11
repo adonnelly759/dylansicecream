@@ -1,3 +1,8 @@
+<div class = "row pt-4 pb-4">
+	 <div class="col-sm-12 pt-4">
+        <h2 class="make_ice_cream_h2 trend_sansone">Login</h2>
+    </div>
+</div>
 <div class="container h-100">
     <?php if($error === 1 || $error === '1'): ?>
         <div class="row pt-4 pb-4 trend_sansone">
@@ -10,7 +15,7 @@
         </div>
     </div>
     <?php endif; ?>
-    <div class="row h-100 justify-content-center align-items-center pt-4 pb-4">
+    <div class="row h-100 justify-content-center align-items-center  pb-4">
         <form class="col-sm-12" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1" class="trend_sansone">Email address</label>
