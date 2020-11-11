@@ -1,6 +1,6 @@
 <div class = "row pt-4 pb-4">
 	 <div class="col-sm-12 pt-4">
-        <h2 class="make_ice_cream_h2 trend_sansone">Login</h2>
+        <h2 class="make_ice_cream_h2 trend_sansone">Employee Login</h2>
     </div>
 </div>
 <div class="container h-100">

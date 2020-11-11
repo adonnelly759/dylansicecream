@@ -3,9 +3,9 @@
         <h2 class="make_ice_cream_h2  trend_sansone">Retrieve Your Sundae</h2>
     </div>
 </div>
-<div class = "row pt-4 pb-4">
+
 <?php if($error === 1 || $error === '1'): ?>
-        <div class="row pt-4 pb-4 trend_sansone">
+        <div class="row pb-4 trend_sansone">
         <div class="col-sm-12 pt-4">
             <div class="alert alert-dismissible alert-warning">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -15,7 +15,6 @@
         </div>
     </div>
 <?php endif; ?>
-</div>
     <div class="row h-100 justify-content-center align-items-center pb-4">
         <form class="col-sm-12" method="POST">
             <div class="form-group">
@@ -27,11 +26,23 @@
     </div>
     <?php if($codeFound === 1 || $codeFound === '1'): ?>
         <div class = "row pt-4 pb-4">
-        <p>Code Found!</p>
-        <?php if(!empty($creations)): ?>
-            <?php foreach($creations as $creation): ?>
-                <p><?php echo $creation['CreationID']; ?></p>
-            <?php endforeach; ?>
-        <?php endif; ?>
+        <table class="table table-responsive table-hover w-100 d-block d-md-table">
+            <thead>
+                <tr>
+                <th scope="col">Code</th>
+                <th scope="col">Created</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php if(!empty($creations)): ?>
+                <?php foreach($creations as $creation): ?>
+                <tr>
+                    <th scope="row"><?php echo $creation['CreationCode']; ?></th>
+                    <td><?php echo $creation['Created']; ?></td>
+                </tr>
+                <?php endforeach; ?>
+            <?php endif; ?>
+            </tbody>
+        </table>
         </div>
     <?php endif; ?>
