@@ -35,7 +35,7 @@ $routes->setAutoRoute(true);
 $routes->get("/", "Frontend::index");
 $routes->post("/", "Frontend::index");
 $routes->get("/retrieve", "Frontend::retrieve");
-$routes->post("/retrieve", "Frontend::findCode");
+$routes->post("/retrieve", "CreationController::findCode");
 $routes->get("/login", "Frontend::login");
 $routes->get("/admin", "Frontend::admin", ['filter' => 'checkSession']);
 $routes->get("/logout", "Frontend::logout");
