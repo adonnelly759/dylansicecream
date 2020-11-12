@@ -11,6 +11,26 @@ class Frontend extends BaseController {
         $code = new Creation();
         $user = new User();
         $item = new Item();
+        $random_code = $code->random_code();
+
+        do {
+            $random_code = $code->random_code();
+        } while (!$code->is_unique($random_code));
+
+        if($this->request->getMethod() === "post"){
+            $data = array(
+                "code"=>$random_code,
+                "flavours"=>json_encode($this->request->getPost("flavours")),
+                "wafers"=>json_encode($this->request->getPost("wafers")),
+                "inclusions"=>json_encode($this->request->getPost("inclusions")),
+                "sprinkles"=>json_encode($this->request->getPost("sprinkles")),
+                "sauces"=>json_encode($this->request->getPost("sauces")),
+                "cream"=>($this->request->getPost("cream") === "on") ? 1 : 0,
+                "used"=>0
+            );
+            $code->insert($data);
+        }
+
         $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;
         $data['flavours'] = $item->filter_item(1);
         $data['inclusions'] = $item->filter_item(2);
