@@ -69,7 +69,6 @@
             </div>
     </div>
     <div class="col-sm-6 pb-4 bg-light">
-    <label class="text-white mb-3 lead">Where do you live?</label>
 
     </div>
     <button type="submit" class="btn btn-primary make_ice_cream_btn trend_sansone">GENERATE SUNDAE CODE</button>

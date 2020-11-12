@@ -55,19 +55,6 @@ class Frontend extends BaseController {
         echo view("templates/footer");
     }
 
-    public function findCode(){
-        $code = new Creation();
-        $codeInput = $this->request->getPost("codeInput");
-        $query = $code->where("code", $codeInput)->find();
-        if(count($query) != 0 ){
-             $creation = $code->filter_creation($codeInput); 
-             $this->session->setFlashdata('creation', $creation);
-            return redirect()->to('/retrieve?codeFound=1');
-        } else {
-            return redirect()->to('/retrieve?error=1');
-        }
-    }
-
     public function login(){
         $error = $this->request->getGet("error");
         $user = new User();
