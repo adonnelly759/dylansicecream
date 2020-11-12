@@ -51,3 +51,16 @@
 .sundae-details-bold{
     font-weight:bold;
 }
+
+.retrieve-title-row {
+    background-color: #f1f1f1;
+    padding-left: 15px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.retrieve-details-row {
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
