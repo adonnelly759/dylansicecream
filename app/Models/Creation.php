@@ -2,6 +2,7 @@
 
 namespace App\Models;
 use CodeIgniter\Model;
+use App\Models\Item;
 
 class Creation extends Model{
     protected $DBGroup = "default";
@@ -22,14 +23,15 @@ class Creation extends Model{
 
     public function filter_creation($code){
         $query = $this->where("code", $code)->find();
+        $item = new Item();
         return array(
             "id"=>$query[0]["id"],
             "code"=>$query[0]["code"],
-            "flavours"=>\json_decode($query[0]["flavours"]),
-            "wafers"=>\json_decode($query[0]["wafers"]),
-            "inclusions"=>\json_decode($query[0]["inclusions"]),
-            "sprinkles"=>\json_decode($query[0]["sprinkles"]),
-            "sauces"=>\json_decode($query[0]["sauces"]),
+            "flavours"=>$item->find(\json_decode($query[0]["flavours"])),
+            "wafers"=>$item->find(\json_decode($query[0]["wafers"])),
+            "inclusions"=>$item->find(\json_decode($query[0]["inclusions"])),
+            "sprinkles"=>$item->find(\json_decode($query[0]["sprinkles"])),
+            "sauces"=>$item->find(\json_decode($query[0]["sauces"])),
             "cream"=>$query[0]["cream"],
             "created"=>$query[0]["created"],
             "used"=>$query[0]["used"]
