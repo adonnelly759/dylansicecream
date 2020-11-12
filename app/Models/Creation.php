@@ -21,9 +21,20 @@ class Creation extends Model{
     }
 
     public function filter_creation($code){
-		$query = $this->query("SELECT `creation`.`id` as 'CreationID', `creation`.`code` AS 'CreationCode', `creation`.`Created` AS 'Created' FROM `creation` WHERE `creation`.`code` = ?", $code);
-		return $query->getResultArray();
-	}
+        $query = $this->where("code", $code)->find();
+        return array(
+            "id"=>$query[0]["id"],
+            "code"=>$query[0]["code"],
+            "flavours"=>\json_decode($query[0]["flavours"]),
+            "wafers"=>\json_decode($query[0]["wafers"]),
+            "inclusions"=>\json_decode($query[0]["inclusions"]),
+            "sprinkles"=>\json_decode($query[0]["sprinkles"]),
+            "sauces"=>\json_decode($query[0]["sauces"]),
+            "cream"=>$query[0]["cream"],
+            "created"=>$query[0]["created"],
+            "used"=>$query[0]["used"]
+        );
+    }
 }
 
 ?>
