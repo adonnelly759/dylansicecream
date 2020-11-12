@@ -51,7 +51,7 @@ class Frontend extends BaseController {
         $data['error'] = $error;
         $data['creations'] = $this->session->get('creation');
         echo view("templates/header", $data);
-        echo view("pages/frontend/retrieve");
+        echo view("pages/frontend/retrieve", $data);
         echo view("templates/footer");
     }
 

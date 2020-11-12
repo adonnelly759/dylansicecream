@@ -37,8 +37,8 @@
             <?php if(!empty($creations)): ?>
                 <?php foreach($creations as $creation): ?>
                 <tr>
-                    <th scope="row"><?php echo $creation['CreationCode']; ?></th>
-                    <td><?php echo $creation['Created']; ?></td>
+                    <th scope="row"><?php echo $creation['flavours']; ?></th>
+                    <td><?php echo $creation['created']; ?></td>
                 </tr>
                 <?php endforeach; ?>
             <?php endif; ?>
