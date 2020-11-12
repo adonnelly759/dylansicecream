@@ -43,3 +43,11 @@
     width: 20px;
     cursor: pointer;
 }
+
+.sundae-details-inline-flex{
+    display: inline-flex;
+}
+
+.sundae-details-bold{
+    font-weight:bold;
+}
