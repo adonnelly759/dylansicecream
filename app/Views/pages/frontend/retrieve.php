@@ -25,10 +25,14 @@
     </div>
     <?php if($codeFound === 1 || $codeFound === '1'): ?>
         <?php if(!empty($creations)): ?>
-        <div class="row retrieve-title-row"><h3 class="pt-2">Sundae Details</h3></div>
+        <div class="row retrieve-title-row">
+            <div class="col-sm-12">
+                <h3 class="pt-2 retrieve-h3">Sundae Details</h3>
+            </div>
+        </div>
             <div class = "row pt-4 pb-4 retrieve-details-row">
                 <div class="col-sm-6">
-                    <p class="sundae-details-bold">Code:&nbsp;</p>
+                    <p class="sundae-details-bold">Unique Code:&nbsp;</p>
                     <p><?php echo $creations['code']; ?></p>
                     <p class="sundae-details-bold">Flavour(s):&nbsp;</p>
                     <?php if(!empty($creations['flavours'])): ?>
