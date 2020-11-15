@@ -43,3 +43,23 @@
     width: 20px;
     cursor: pointer;
 }
+
+.sundae-details-inline-flex{
+    display: inline-flex;
+}
+
+.sundae-details-bold{
+    font-weight:bold;
+}
+
+.retrieve-title-row {
+    background-color: #f1f1f1;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.retrieve-details-row {
+    background-color: #f1f1f1;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
