@@ -69,7 +69,12 @@
             </div>
     </div>
     <div class="col-sm-6 pb-4 bg-light">
-
+        <div class="imageWrapper">
+        <img class="overlayImage" src="<?php echo base_url();?>/assets/images/main.PNG">
+        <img class="overlayImage" src="<?php echo base_url();?>/assets/images/1.PNG">
+        <img class="overlayImage" src="<?php echo base_url();?>/assets/images/2.PNG">
+        <img class="overlayImage" src="<?php echo base_url();?>/assets/images/3.PNG">
+    </div>
     </div>
     <button type="submit" class="btn btn-primary make_ice_cream_btn trend_sansone">GENERATE SUNDAE CODE</button>
     </form>
