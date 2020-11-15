@@ -12,9 +12,7 @@ public function findCode(){
         $code = new Creation();
         $user = new User();
         $codeInput = $this->request->getPost("codeInput");
-        $code->where("code", $codeInput)
-            ->update("uses", "uses+1")
-            ->update();
+        $code->where("code", $codeInput)->increment("used", 1);
         $query = $code->where("code", $codeInput)->find();
         $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;
         if(count($query) > 0 ){
