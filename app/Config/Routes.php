@@ -67,22 +67,28 @@ $routes->post("/admin/wafer/edit/(:any)", "AdminWafer::edit/$1", ['filter' => 'c
 $routes->add("/admin/wafer/delete/(:any)", "AdminWafer::delete/$1", ['filter' => 'checkSession']);
 
 //Inclusion
-$routes->get("admin/inclusion", "AdminInclusion::manage", ['filter' => 'checkSession']);
-$routes->add("admin/inclusion/add", "AdminInclusion::add", ['filter' => 'checkSession']);
-$routes->add("admin/inclusion/edit/(:any)", "AdminInclusion::edit/$1", ['filter' => 'checkSession']);
-$routes->add("admin/inclusion/delete/(:any)", "AdminInclusion::delete/$1", ['filter' => 'checkSession']);
+$routes->get("/admin/inclusion", "AdminInclusion::manage", ['filter' => 'checkSession']);
+$routes->get("/admin/inclusion/add", "AdminInclusion::add", ['filter' => 'checkSession']);
+$routes->post("/admin/inclusion/add", "AdminInclusion::add", ['filter' => 'checkSession']);
+$routes->get("/admin/inclusion/edit/(:any)", "AdminInclusion::edit/$1", ['filter' => 'checkSession']);
+$routes->post("/admin/inclusion/edit/(:any)", "AdminInclusion::edit/$1", ['filter' => 'checkSession']);
+$routes->add("/admin/inclusion/delete/(:any)", "AdminInclusion::delete/$1", ['filter' => 'checkSession']);
 
 //Sauce
-$routes->get("admin/sauce", "AdminSauce::manage", ['filter' => 'checkSession']);
-$routes->add("admin/sauce/add", "AdminSauce::add", ['filter' => 'checkSession']);
-$routes->add("admin/sauce/edit/(:any)", "AdminSauce::edit/$1", ['filter' => 'checkSession']);
-$routes->add("admin/sauce/delete/(:any)", "AdminSauce::delete/$1", ['filter' => 'checkSession']);
-
-//Sprinkles
-$routes->get("admin/sprinkles", "AdminSprinkles::manage", ['filter' => 'checkSession']);
-$routes->add("admin/sprinkles/add", "AdminSprinkles::add", ['filter' => 'checkSession']);
-$routes->add("admin/sprinkles/edit/(:any)", "AdminSprinkles::edit/$1", ['filter' => 'checkSession']);
-$routes->add("admin/sprinkles/delete/(:any)", "AdminSprinkles::delete/$1", ['filter' => 'checkSession']);
+$routes->get("/admin/sauce", "AdminSauce::manage", ['filter' => 'checkSession']);
+$routes->get("/admin/sauce/add", "AdminSauce::add", ['filter' => 'checkSession']);
+$routes->post("/admin/sauce/add", "AdminSauce::add", ['filter' => 'checkSession']);
+$routes->get("/admin/sauce/edit/(:any)", "AdminSauce::edit/$1", ['filter' => 'checkSession']);
+$routes->post("/admin/sauce/edit/(:any)", "AdminSauce::edit/$1", ['filter' => 'checkSession']);
+$routes->add("/admin/sauce/delete/(:any)", "AdminSauce::delete/$1", ['filter' => 'checkSession']);
+			  
+//Sprinkles	  
+$routes->get("/admin/sprinkles", "AdminSprinkles::manage", ['filter' => 'checkSession']);
+$routes->get("/admin/sprinkles/add", "AdminSprinkles::add", ['filter' => 'checkSession']);
+$routes->post("/admin/sprinkles/add", "AdminSprinkles::add", ['filter' => 'checkSession']);
+$routes->get("/admin/sprinkles/edit/(:any)", "AdminSprinkles::edit/$1", ['filter' => 'checkSession']);
+$routes->post("/admin/sprinkles/edit/(:any)", "AdminSprinkles::edit/$1", ['filter' => 'checkSession']);
+$routes->add("/admin/sprinkles/delete/(:any)", "AdminSprinkles::delete/$1", ['filter' => 'checkSession']);
 
 /**
  * --------------------------------------------------------------------

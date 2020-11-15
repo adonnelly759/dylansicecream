@@ -14,12 +14,18 @@
     <?php endif; ?>
 
     <div class="col-sm-12 pt-4">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-sm-12 col-md-12">
                     <div class="form-group">
                         <label for="inclusion_name">Inclusion Name</label>
                         <input type="text" class="form-control" id="inclusion_name" name="inclusion_name" required placeholder="Inclusion Name">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <label for="image">PNG Image</label>
+                        <input type="file" class="form-control" id="file" name="file" required accept="image/png" placeholder="Image Upload">
                     </div>
                 </div>
             </div>

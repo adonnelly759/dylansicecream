@@ -14,12 +14,18 @@
     <?php endif; ?>
 
     <div class="col-sm-12 pt-4">
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-sm-12 col-md-6">
                     <div class="form-group">
                         <label for="sauce_name">Sauce Name</label>
                         <input type="text" class="form-control" id="sauce_name" name="sauce_name" required placeholder="Sauce Name" value="<?php echo $sauces['name']; ?>">
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                    <div class="form-group">
+                        <label for="image">PNG Image</label>
+                        <input type="file" class="form-control" id="file" name="file" accept="image/png" placeholder="Image Upload">
                     </div>
                 </div>
             </div>

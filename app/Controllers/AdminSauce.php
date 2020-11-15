@@ -3,6 +3,7 @@
 namespace App\Controllers;
 use App\Models\Item;
 use App\Models\User;
+use CodeIgniter\Controller;
 
 class AdminSauce extends BaseController {
     public function manage(){
@@ -24,7 +25,10 @@ class AdminSauce extends BaseController {
     
         // Handle post
         if($this->request->getMethod() === "post"){
-            if($item->insert(["name"=>$this->request->getPost("sauce_name"), "group"=>5])){
+            $image = $this->request->getFile("file");
+            $newName = $image->getRandomName();
+            if($item->insert(["name"=>$this->request->getPost("sauce_name"), "group"=>5, "image"=>$newName])){
+                $image->move(WRITEPATH . 'uploads', $newName);
                 return redirect()->to("/admin/sauce");
             } else {
                 $data['error'] = "Failed to add new sauce";
@@ -46,7 +50,13 @@ class AdminSauce extends BaseController {
 
         // Handle post
         if($this->request->getMethod() === "post"){
+            $image = $this->request->getFile("file");
             $item->set("name", $this->request->getPost("sauce_name"));
+            if(!empty($image->getClientName())){
+                $newName = $image->getRandomName();
+                $item->set("image", $newName);
+                $image->move(WRITEPATH . "uploads", $newName);
+            }
             $item->where("id", $id);
             if($item->update()){
                 return redirect()->to("/admin/sauce");
