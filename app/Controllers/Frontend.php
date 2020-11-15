@@ -12,7 +12,6 @@ class Frontend extends BaseController {
         $user = new User();
         $item = new Item();
         $random_code = $code->random_code();
-
         do {
             $random_code = $code->random_code();
         } while (!$code->is_unique($random_code));
