@@ -52,8 +52,10 @@ $routes->add("/admin/user/delete/(:any)", "AdminUser::delete/$1", ['filter' => '
 
 // Flavour
 $routes->get("/admin/flavour", "AdminFlavour::manage", ['filter' => 'checkSession']);
-$routes->add("/admin/flavour/add", "AdminFlavour::add", ['filter' => 'checkSession']);
-$routes->add("/admin/flavour/edit/(:any)", "AdminFlavour::edit/$1", ['filter' => 'checkSession']);
+$routes->get("/admin/flavour/add", "AdminFlavour::add", ['filter' => 'checkSession']);
+$routes->post("/admin/flavour/add", "AdminFlavour::add", ['filter' => 'checkSession']);
+$routes->get("/admin/flavour/edit/(:any)", "AdminFlavour::edit/$1", ['filter' => 'checkSession']);
+$routes->post("/admin/flavour/edit/(:any)", "AdminFlavour::edit/$1", ['filter' => 'checkSession']);
 $routes->add("/admin/flavour/delete/(:any)", "AdminFlavour::delete/$1", ['filter' => 'checkSession']);
 
 // Wafer
