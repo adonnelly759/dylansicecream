@@ -22,7 +22,10 @@ class AdminWafer extends BaseController {
     
         // Handle post
         if($this->request->getMethod() === "post"){
-            if($item->insert(["name"=>$this->request->getPost("wafer_name"), "group"=>4])){
+            $image = $this->request->getFile("file");
+            $newName = $image->getRandomName();
+            if($item->insert(["name"=>$this->request->getPost("wafer_name"), "group"=>4, "image"=>$newName])){
+                $image->move(WRITEPATH . 'uploads', $newName);
                 return redirect()->to("/admin/wafer");
             } else {
                 $data['error'] = "Failed to add new wafer";
@@ -44,7 +47,13 @@ class AdminWafer extends BaseController {
 
         // Handle post
         if($this->request->getMethod() === "post"){
+            $image = $this->request->getFile("file");
             $item->set("name", $this->request->getPost("wafer_name"));
+            if(!empty($image->getClientName())){
+                $newName = $image->getRandomName();
+                $item->set("image", $newName);
+                $image->move(WRITEPATH . "uploads", $newName);
+            }
             $item->where("id", $id);
             if($item->update()){
                 return redirect()->to("/admin/wafer");

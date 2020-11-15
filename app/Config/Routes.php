@@ -60,8 +60,10 @@ $routes->add("/admin/flavour/delete/(:any)", "AdminFlavour::delete/$1", ['filter
 
 // Wafer
 $routes->get("/admin/wafer", "AdminWafer::manage", ['filter' => 'checkSession']);
-$routes->add("/admin/wafer/add", "AdminWafer::add", ['filter' => 'checkSession']);
-$routes->add("/admin/wafer/edit/(:any)", "AdminWafer::edit/$1", ['filter' => 'checkSession']);
+$routes->get("/admin/wafer/add", "AdminWafer::add", ['filter' => 'checkSession']);
+$routes->post("/admin/wafer/add", "AdminWafer::add", ['filter' => 'checkSession']);
+$routes->get("/admin/wafer/edit/(:any)", "AdminWafer::edit/$1", ['filter' => 'checkSession']);
+$routes->post("/admin/wafer/edit/(:any)", "AdminWafer::edit/$1", ['filter' => 'checkSession']);
 $routes->add("/admin/wafer/delete/(:any)", "AdminWafer::delete/$1", ['filter' => 'checkSession']);
 
 //Inclusion
