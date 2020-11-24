@@ -45,6 +45,7 @@ $routes->post("/login", "UserController::check");
 
 // API
 $routes->post("/api/image", "APIController::getImageName");
+$routes->match(['get', 'post'], 'render/(:any)', 'RenderImage::index/$1');
 
 // Admin routes
 // User
