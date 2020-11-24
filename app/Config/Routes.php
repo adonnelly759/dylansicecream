@@ -43,6 +43,9 @@ $routes->get("/logout", "Frontend::logout");
 // User Authentication
 $routes->post("/login", "UserController::check");
 
+// API
+$routes->post("/api/image", "APIController::getImageName");
+
 // Admin routes
 // User
 $routes->get("/admin/user", "AdminUser::manage", ['filter' => 'checkSession']);
