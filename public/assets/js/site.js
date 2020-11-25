@@ -3,7 +3,7 @@ function createImageElement(imgSrc, imgID) {
     var imgDiv = document.createElement("img");
     imgDiv.classList.add("ice_cream_wrapper");
     imgDiv.src = imgSrc;
-    imgDiv.id = imgID;
+    imgDiv.id = "img" + imgID;
     parent.appendChild(imgDiv);
 }
 
@@ -11,7 +11,7 @@ function getImage(elementID) {
     var value = $('#' + elementID).val();
     console.log(value);
     for (i = 0; i < value.length; i++) {
-        if (!document.getElementById(value[i])) {
+        if (!document.getElementById("img" + value[i])) {
             const url = "/api/image"
             fetch(url, {
                 method: "POST",
