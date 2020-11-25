@@ -1,25 +1,31 @@
-function create_image_element(imgSrc) {
+function createImageElement(imgSrc, imgID) {
     var parent = document.getElementById("ice_cream_wrapper");
     var imgDiv = document.createElement("img");
     imgDiv.classList.add("ice_cream_wrapper");
     imgDiv.src = imgSrc;
+    imgDiv.id = imgID;
     parent.appendChild(imgDiv);
 }
 
-function getImage(value){
-    value === parseInt(value)
-    const url = "/api/image"
-    fetch(url, {
-        method: "POST",
-        body: `value=${value}`,
-        headers: { 
-            'Content-type': 'application/x-www-form-urlencoded' 
-        }
-    })
-    .then(function(res){return res.json()})
-    .then((data) => {
-        image = `render/${data[0].image}`
-        create_image_element(image)
-    })
-    .catch((err) => console.log(err));
+function getImage(elementID) {
+    var value = $('#' + elementID).val();
+    console.log(value);
+    for (i = 0; i < value.length; i++) {
+        if (!document.getElementById(value[i])) {
+            const url = "/api/image"
+            fetch(url, {
+                method: "POST",
+                body: `value=${value[i]}`,
+                headers: {
+                    'Content-type': 'application/x-www-form-urlencoded'
+                }
+            })
+                .then(function (res) { return res.json() })
+                .then((data) => {
+                    image = `render/${data[0].image}`
+                    createImageElement(image, data[0].id)
+                })
+                .catch((err) => console.log(err));
+        } 
+    }
 }
