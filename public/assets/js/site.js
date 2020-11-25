@@ -4,6 +4,7 @@ function createImageElement(imgSrc, imgID) {
     imgDiv.classList.add("ice_cream_wrapper");
     imgDiv.src = imgSrc;
     imgDiv.id = "img" + imgID;
+    imgDiv.className = "overlayImage";
     parent.appendChild(imgDiv);
 }
 
