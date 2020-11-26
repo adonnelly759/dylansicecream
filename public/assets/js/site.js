@@ -32,3 +32,8 @@ function getImage(elementID) {
         } 
     }
 }
+
+function removeItems(typeID){
+    let items = document.querySelectorAll(`[data-type='${typeID}']`)
+    items.forEach(x => x.remove())
+}
