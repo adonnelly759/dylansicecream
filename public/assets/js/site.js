@@ -1,9 +1,9 @@
-function createImageElement(imgSrc, imgID) {
+function createImageElement(imgSrc, imgType) {
     var parent = document.getElementById("ice_cream_wrapper");
     var imgDiv = document.createElement("img");
     imgDiv.classList.add("ice_cream_wrapper");
     imgDiv.src = imgSrc;
-    imgDiv.id = "img" + imgID;
+    imgDiv.setAttribute("data-type", imgType); 
     imgDiv.className = "overlayImage";
     parent.appendChild(imgDiv);
 }
@@ -26,7 +26,7 @@ function getImage(elementID) {
                 .then(function (res) { return res.json() })
                 .then((data) => {
                     image = `render/${data[0].image}`
-                    createImageElement(image, data[0].id)
+                    createImageElement(image, data[0].group)
                 })
                 .catch((err) => console.log(err));
         } 
