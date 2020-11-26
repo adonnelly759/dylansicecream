@@ -9,14 +9,16 @@ function createImageElement(imgSrc, imgID) {
 }
 
 function getImage(elementID) {
-    var value = $('#' + elementID).val();
-    console.log(value);
-    for (i = 0; i < value.length; i++) {
-        if (!document.getElementById("img" + value[i])) {
+    const selected = document.querySelector("#" + elementID)
+    console.log(selected);
+    let values = [...selected.options].filter((x) => x.selected).map((x) => x.value);
+    console.log(values);
+    for (i = 0; i < values.length; i++) {
+        if (!document.getElementById("img" + values[i])) {
             const url = "/api/image"
             fetch(url, {
                 method: "POST",
-                body: `value=${value[i]}`,
+                body: `value=${values[i]}`,
                 headers: {
                     'Content-type': 'application/x-www-form-urlencoded'
                 }
