@@ -47,8 +47,9 @@ function getImage(elementID, typeID) {
         })
         .catch((err) => console.log(err)); 
     })
-    console.log("Existing", existing)
-    console.log("Values", values)
+    if(values.length === 0){
+        removeAll(typeID)
+    }
 
 }
 
