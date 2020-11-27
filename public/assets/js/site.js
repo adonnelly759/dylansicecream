@@ -5,7 +5,7 @@ function createImageElement(imgSrc, imgID, imgType) {
     imgDiv.src = imgSrc;
     imgDiv.setAttribute("data-id", imgID); 
     imgDiv.setAttribute("data-type", imgType); 
-    imgDiv.className = "overlayImage";
+    //imgDiv.className = "overlayImage";
     parent.appendChild(imgDiv);
 }
 
@@ -19,7 +19,7 @@ function getImage(elementID, typeID) {
     }, []);
     let existing = currentImages(typeID)
     values.forEach(value => {
-        const url = "/api/image"
+                const url = "/api/image"
         fetch(url, {
             method: "POST",
             body: `value=${value}`,
@@ -33,6 +33,7 @@ function getImage(elementID, typeID) {
             createImageElement(image, data[0].id, data[0].group)
             if(existing.length != values.length && !compareArrays(existing, values)){
                 // Remove images, then loop
+                removeAll(typeID)
                 createImageElement(image, data[0].id, data[0].group)
             } else {
                 console.log("Do nothing")
