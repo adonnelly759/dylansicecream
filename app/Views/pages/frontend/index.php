@@ -2,7 +2,7 @@
     <div class="col-sm-12 pt-4 pb-4">
         <h2 class="center_text_align pb-2 trend_sansone">Dylan's Sundae Maker</h2>
     </div>
-    <div class = "col-sm-6 pb-4">
+    <div class = "col-sm-12 col-md-6 pb-4">
         <form method="post" action="" class="trend_sansone">
             <div class="form-group">
             <label class="mb-3 text-primary">Select your Flavour(s)</label>
@@ -17,7 +17,7 @@
                 <?php endif; ?>
             </select>
             </div>
-            <div class="form-group"
+            <div class="form-group">
             <label class="mb-3 text-primary">Select your Inclusion</label>
             <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="inclusion" name="inclusions[]" onChange="getImage('inclusion', '2');">
                 <option value="-1">No Inclusion</option>
@@ -63,13 +63,14 @@
             </div>
             <div class="form-group">
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="cream">
+                    <input type="checkbox" class="custom-control-input" id="customSwitch1" name="cream" onChange="displayCream();">
                     <label class="custom-control-label" for="customSwitch1">Do you want Cream?</label>
                 </div>
             </div>
     </div>
-    <div class="col-sm-6 pb-4 bg-light">
-        <div class="imageWrapper" id="ice_cream_wrapper">
+    <div class="col-sm-12 col-md-6 pb-4 bg-light image-col-height">
+        <div class="imageWrapper image-wrapper-margin" id="ice_cream_wrapper">
+        <img class="overlayImage img-fluid" src="<?php echo base_url();?>/assets/images/sundae_dish.png" alt="Sundae Dish">
         
     </div>
     </div>

@@ -5,7 +5,17 @@ function createImageElement(imgSrc, imgID, imgType) {
     imgDiv.src = imgSrc;
     imgDiv.setAttribute("data-id", imgID); 
     imgDiv.setAttribute("data-type", imgType); 
-    imgDiv.className = "overlayImage";
+    imgDiv.className = "overlayImage img-fluid";
+    parent.appendChild(imgDiv);
+}
+
+function displayCream() {
+    var parent = document.getElementById("ice_cream_wrapper");
+    var imgDiv = document.createElement("img");
+    imgDiv.classList.add("ice_cream_wrapper");
+    imgDiv.src = base_url + "/assets/images/cream.png";
+    imgDiv.setAttribute("data-type", "cream");
+    imgDiv.className = "overlayImage img-fluid";
     parent.appendChild(imgDiv);
 }
 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/pulse.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/assets/css/bootstrap-select.min.css">
+    <script>var base_url = '<?php echo base_url() ?>';</script>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
