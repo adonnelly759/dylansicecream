@@ -53,7 +53,6 @@ function getImage(elementID, typeID) {
 
 }
 
-
 function arr_diff (a1, a2) {
     var a = [], diff = [];
     for (var i = 0; i < a1.length; i++) {
