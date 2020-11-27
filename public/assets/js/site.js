@@ -5,7 +5,7 @@ function createImageElement(imgSrc, imgID, imgType) {
     imgDiv.src = imgSrc;
     imgDiv.setAttribute("data-id", imgID); 
     imgDiv.setAttribute("data-type", imgType); 
-    //imgDiv.className = "overlayImage";
+    imgDiv.className = "overlayImage";
     parent.appendChild(imgDiv);
 }
 
