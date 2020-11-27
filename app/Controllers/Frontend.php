@@ -28,6 +28,7 @@ class Frontend extends BaseController {
                 "used"=>0
             );
             $code->insert($data);
+            return redirect()->to("/code?code=$random_code");
         }
 
         $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;
@@ -39,6 +40,19 @@ class Frontend extends BaseController {
         echo view("templates/header", $data);
         echo view("pages/frontend/index", $data);
         echo view("templates/footer");   
+    }
+
+    public function code() {
+        
+        $code = new Creation();
+        $user = new User();
+        $item = new Item();
+        $random_code = $this->request->getGet("code");
+        $data['isLogged'] = ($user->user_exists($this->session->email) && !empty($this->session->email)) ? true : false;
+        $data['code'] = $random_code;
+        echo view("templates/header", $data);
+        echo view("pages/frontend/code", $data);
+        echo view("templates/footer");
     }
 
     public function retrieve() {

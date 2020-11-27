@@ -34,6 +34,7 @@ $routes->setAutoRoute(true);
 // Frontend Routes
 $routes->get("/", "Frontend::index");
 $routes->post("/", "Frontend::index");
+$routes->get("/code", "Frontend::code");
 $routes->get("/retrieve", "Frontend::retrieve");
 $routes->post("/retrieve", "CreationController::findCode");
 $routes->get("/login", "Frontend::login");

@@ -1,6 +1,6 @@
 <div class = "row pt-4 pb-4">
     <div class="col-sm-12 pt-4 pb-4">
-        <h2 class="make_ice_cream_h2 pb-2 trend_sansone">Dylan's Sundae Maker</h2>
+        <h2 class="center_text_align pb-2 trend_sansone">Dylan's Sundae Maker</h2>
     </div>
     <div class = "col-sm-6 pb-4">
         <form method="post" action="" class="trend_sansone">

@@ -9,7 +9,7 @@
     width:50%;
 }
 
-.make_ice_cream_h2{
+.center_text_align{
     text-align:center;
 }
 
@@ -73,4 +73,21 @@
     position: absolute;
     top: 0;
     left: 0;
+}
+
+.code-display {
+    font-size: 50px;
+    color: #a1cd3a;
+}
+.code-display-warning {
+    font-size: 11px;
+    color: red;
+    margin-bottom: 2rem;
+}
+
+.code-btn-sizing {
+    display: block;
+    width: 45%;
+    margin: auto;
+    margin-bottom: 10px;
 }
