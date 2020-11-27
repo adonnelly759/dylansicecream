@@ -17,9 +17,9 @@
                 <?php endif; ?>
             </select>
             </div>
-            <div class="form-group">
+            <div class="form-group"
             <label class="mb-3 text-primary">Select your Inclusion</label>
-            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="inclusion" name="inclusions[]">
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="inclusion" name="inclusions[]" onChange="getImage('inclusion', '2');">
                 <option value="-1">No Inclusion</option>
                 <?php if(!empty($inclusions)): ?>
                     <?php foreach($inclusions as $inclusion): ?>
@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
             <label class="mb-3 text-primary">Select your Wafer</label>
-            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="1" class="selectpicker w-100 form-control" id="wafer" name="wafers[]">
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="1" class="selectpicker w-100 form-control" id="wafer" name="wafers[]" onChange="getImage('wafer', '4');">
                 <option value="-1">No Wafer</option>
                 <?php if(!empty($wafers)): ?>
                     <?php foreach($wafers as $wafer): ?>
@@ -41,7 +41,7 @@
             </div>
             <div class="form-group">
             <label class="mb-3 text-primary">Select your Sprinkles</label>
-            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="sprinkles" name="sprinkles[]">
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="sprinkles" name="sprinkles[]" onChange="getImage('sprinkles', '3');">
                 <option value="-1">No Sprinkles</option>
                 <?php if(!empty($sprinkles)): ?>
                     <?php foreach($sprinkles as $sprinkle): ?>
@@ -52,7 +52,7 @@
             </div>
             <div class="form-group">
             <label class="mb-3 text-primary">Select your Sauce</label>
-            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="sauce" name="sauces[]">
+            <select multiple data-style="bg-white rounded-pill px-4 py-3 shadow-sm" data-max-options="2" class="selectpicker w-100 form-control" id="sauce" name="sauces[]" onChange="getImage('sauce', '5');">
             <option value="-1">No Sauce</option>
             <?php if(!empty($sauces)): ?>
                 <?php foreach($sauces as $sauce): ?>

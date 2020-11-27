@@ -19,7 +19,7 @@ function getImage(elementID, typeID) {
     }, []);
     let existing = currentImages(typeID)
     values.forEach(value => {
-                const url = "/api/image"
+        const url = "/api/image"
         fetch(url, {
             method: "POST",
             body: `value=${value}`,
