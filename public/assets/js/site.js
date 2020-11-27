@@ -30,7 +30,6 @@ function getImage(elementID, typeID) {
         .then(function (res) { return res.json() })
         .then((data) => {
             image = `render/${data[0].image}`
-            createImageElement(image, data[0].id, data[0].group)
             if(existing.length != values.length && !compareArrays(existing, values)){
                 // Remove images, then loop
                 removeAll(typeID)
