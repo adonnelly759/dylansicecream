@@ -32,14 +32,46 @@ function getImage(elementID, typeID) {
             image = `render/${data[0].image}`
             if(existing.length != values.length && !compareArrays(existing, values)){
                 // Remove images, then loop
-                removeAll(typeID)
-                createImageElement(image, data[0].id, data[0].group)
+                if(!document.querySelector(`[data-id='${data[0].id}']`)){
+                    createImageElement(image, data[0].id, data[0].group)
+                } else {
+                    diff = arr_diff(values, existing)
+                    diff.forEach(v => {
+                        const el = document.querySelector(`[data-id='${v}']`)
+                        el.remove()
+                    })
+                }
             } else {
                 console.log("Do nothing")
             }
         })
         .catch((err) => console.log(err)); 
     })
+    console.log("Existing", existing)
+    console.log("Values", values)
+
+}
+
+
+function arr_diff (a1, a2) {
+    var a = [], diff = [];
+    for (var i = 0; i < a1.length; i++) {
+        a[a1[i]] = true;
+    }
+
+    for (var i = 0; i < a2.length; i++) {
+        if (a[a2[i]]) {
+            delete a[a2[i]];
+        } else {
+            a[a2[i]] = true;
+        }
+    }
+
+    for (var k in a) {
+        diff.push(k);
+    }
+
+    return diff;
 }
 
 function currentImages(group){
