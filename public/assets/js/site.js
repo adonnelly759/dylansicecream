@@ -1,11 +1,10 @@
-function createImageElement(imgSrc, imgID, imgType) {
+function createImageElement(imgSrc, imgID) {
     var parent = document.getElementById("ice_cream_wrapper");
     var imgDiv = document.createElement("img");
     imgDiv.classList.add("ice_cream_wrapper");
     imgDiv.src = imgSrc;
-    imgDiv.setAttribute("data-id", imgID); 
-    imgDiv.setAttribute("data-type", imgType); 
-    imgDiv.className = "overlayImage img-fluid";
+    imgDiv.id = "img" + imgID;
+    imgDiv.className = "overlayImage";
     parent.appendChild(imgDiv);
 }
 
@@ -19,83 +18,43 @@ function displayCream() {
     parent.appendChild(imgDiv);
 }
 
-function getImage(elementID, typeID) {
-    const selected = document.querySelector("#" + elementID)
-    let values = Array(...selected.options).reduce((acc, option) => {
-        if (option.selected === true) {
-            acc.push(option.value);
+function getImage(elementID) {
+
+    var selected = $("#" + elementID).val();
+    var deselected = $("#" + elementID + " option:not(:selected)");
+
+    var removeArr = [];
+
+    for (i = 0; i < deselected.length; i++) {
+        removeArr.push(deselected[i].value);
+    }
+
+    for (i = 0; i < removeArr.length; i++) {
+        if (document.getElementById("img" + removeArr[i])) {
+            var item = document.getElementById("img" + removeArr[i]);
+            item.remove();
         }
-        return acc;
-    }, []);
-    let existing = currentImages(typeID)
-    values.forEach(value => {
-        const url = "/api/image"
-        fetch(url, {
-            method: "POST",
-            body: `value=${value}`,
-            headers: {
-                'Content-type': 'application/x-www-form-urlencoded'
-            }
-        })
-        .then(function (res) { return res.json() })
-        .then((data) => {
-            image = `render/${data[0].image}`
-            if(existing.length != values.length && !compareArrays(existing, values)){
-                // Remove images, then loop
-                if(!document.querySelector(`[data-id='${data[0].id}']`)){
-                    createImageElement(image, data[0].id, data[0].group)
-                } else {
-                    diff = arr_diff(values, existing)
-                    diff.forEach(v => {
-                        const el = document.querySelector(`[data-id='${v}']`)
-                        el.remove()
-                    })
+    }
+
+    for (i = 0; i < selected.length; i++) {
+        if (!document.getElementById("img" + selected[i])) {
+            const url = "/api/image"
+            fetch(url, {
+                method: "POST",
+                body: `value=${selected[i]}`,
+                headers: {
+                    'Content-type': 'application/x-www-form-urlencoded'
                 }
-            } else {
-                console.log("Do nothing")
-            }
-        })
-        .catch((err) => console.log(err)); 
-    })
-    if(values.length === 0){
-        removeAll(typeID)
-    }
-
-}
-
-function arr_diff (a1, a2) {
-    var a = [], diff = [];
-    for (var i = 0; i < a1.length; i++) {
-        a[a1[i]] = true;
-    }
-
-    for (var i = 0; i < a2.length; i++) {
-        if (a[a2[i]]) {
-            delete a[a2[i]];
-        } else {
-            a[a2[i]] = true;
+            })
+                .then(function (res) { return res.json() })
+                .then((data) => {
+                    image = `render/${data[0].image}`
+                    createImageElement(image, data[0].id)
+                })
+                .catch((err) => console.log(err));
         }
     }
-
-    for (var k in a) {
-        diff.push(k);
-    }
-
-    return diff;
 }
 
-function currentImages(group){
-    const current = document.querySelectorAll(`[data-type='${group}']`)
-    let array = []
-    current.forEach(e => array.push(e.getAttribute("data-id")))
-    return array
-}
 
-function removeAll(typeID){
-    let items = document.querySelectorAll(`[data-type='${typeID}']`)
-    items.forEach(x => x.remove())
-}
 
-function compareArrays(first, second){
-    return first.every((e)=> second.includes(e)) && second.every((e)=> first.includes(e));
-}
