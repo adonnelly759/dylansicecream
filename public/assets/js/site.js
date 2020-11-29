@@ -4,7 +4,7 @@ function createImageElement(imgSrc, imgID) {
     imgDiv.classList.add("ice_cream_wrapper");
     imgDiv.src = imgSrc;
     imgDiv.id = "img" + imgID;
-    imgDiv.className = "overlayImage";
+    imgDiv.className = "overlayImage img-fluid";
     parent.appendChild(imgDiv);
 }
 
@@ -58,4 +58,12 @@ function getImage(elementID) {
                 .catch((err) => console.log(err));
         }
     }
+}
+
+function copyToClipboard() {
+        var range = document.createRange();
+        range.selectNode(document.getElementById("unique_code"));
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        alert("Unique Code has been copied.")
 }
