@@ -9,20 +9,24 @@ function createImageElement(imgSrc, imgID) {
 }
 
 function displayCream() {
-    var parent = document.getElementById("ice_cream_wrapper");
-    var imgDiv = document.createElement("img");
-    imgDiv.classList.add("ice_cream_wrapper");
-    imgDiv.src = base_url + "/assets/images/cream.png";
-    imgDiv.setAttribute("data-type", "cream");
-    imgDiv.className = "overlayImage img-fluid";
-    parent.appendChild(imgDiv);
+    var checked = document.getElementById("customSwitch1").checked;
+    if ((checked == true) && (!document.getElementById("img-cream"))) {
+        var parent = document.getElementById("ice_cream_wrapper");
+        var imgDiv = document.createElement("img");
+        imgDiv.classList.add("ice_cream_wrapper");
+        imgDiv.src = base_url + "/assets/images/cream.png";
+        imgDiv.className = "overlayImage img-fluid";
+        imgDiv.id = ("img-cream");
+        parent.appendChild(imgDiv);
+    } else {
+        var item = document.getElementById("img-cream");
+        item.remove();
+    }
 }
 
 function getImage(elementID) {
-
     var selected = $("#" + elementID).val();
     var deselected = $("#" + elementID + " option:not(:selected)");
-
     var removeArr = [];
 
     for (i = 0; i < deselected.length; i++) {
@@ -55,6 +59,3 @@ function getImage(elementID) {
         }
     }
 }
-
-
-
